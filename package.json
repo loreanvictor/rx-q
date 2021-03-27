@@ -1,0 +1,73 @@
+{
+  "name": "rx-q",
+  "version": "0.0.1",
+  "description": "Serve observers one by one",
+  "main": "dist/es5/index.js",
+  "module": "dist/es6/index.js",
+  "types": "dist/es6/index.d.ts",
+  "files": [
+    "dist/es6",
+    "dist/es5",
+    "dist/bundles"
+  ],
+  "keywords": ["rxjs", "streams", "reactive programming", "queue", "keyed queue"],
+  "scripts": {
+    "test": "ts-node src/test",
+    "cov": "npm run cov:gen && npm run cov:clean",
+    "cov:gen": "nyc npm run test",
+    "cov:clean": "rm -fr ./.nyc_output && rm -fr ./coverage",
+    "build-es5": "tsc -p conf/typescript/es5.json",
+    "build-es6": "tsc -p conf/typescript/es6.json",
+    "build": "npm run build-es5 && npm run build-es6",
+    "pack": "rollup -c conf/rollup/es6.js && rollup -c conf/rollup/es5.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loreanvictor/rx-q.git"
+  },
+  "author": "Eugene Ghanizadeh Khoub <ghanizadeh.eugene@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loreanvictor/rx-q/issues"
+  },
+  "homepage": "https://github.com/loreanvictor/rx-q#readme",
+  "dependencies": {
+    "rxjs": "^6.6.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.13",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/node": "^14.14.37",
+    "@types/tape": "^4.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "eslint": "^7.23.0",
+    "nyc": "^15.1.0",
+    "nyc-config-tsx": "^0.1.0",
+    "rollup": "^2.43.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tape": "^5.2.2",
+    "ts-loader": "^8.0.18",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  },
+  "nyc": {
+    "extends": "nyc-config-tsx",
+    "all": true,
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "src/**/test/*",
+      "src/types/*"
+    ],
+    "reporter": [
+      "text",
+      "lcov"
+    ]
+  }
+}
