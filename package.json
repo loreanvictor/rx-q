@@ -1,6 +1,6 @@
 {
   "name": "rx-queue-operator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Serve observers one by one",
   "main": "dist/es5/index.js",
   "module": "dist/es6/index.js",
