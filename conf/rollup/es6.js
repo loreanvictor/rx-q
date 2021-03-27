@@ -11,10 +11,10 @@ export default Object.assign(base, {
   ],
   output: [
     Object.assign(base.output, {
-      file: 'dist/bundles/rx-q.es6.min.js',
+      file: 'dist/bundles/queued-observable.es6.min.js',
     }),
     {
-      file: 'dist/bundles/rx-q.es.min.js',
+      file: 'dist/bundles/queued-observable.es.min.js',
       format: 'es'
     }
   ]

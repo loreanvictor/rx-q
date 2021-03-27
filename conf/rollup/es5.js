@@ -15,6 +15,6 @@ export default Object.assign(base, {
     nodeResolve(),
   ],
   output: Object.assign(base.output, {
-    file: 'dist/bundles/rx-q.es5.min.js',
+    file: 'dist/bundles/queued-observable.es5.min.js',
   }),
 })

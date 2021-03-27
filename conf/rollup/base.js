@@ -1,7 +1,7 @@
 export default {
   input: 'dist/es6/index.js',
   output: {
-    name: 'rxq',
+    name: 'queuedObservable',
     format: 'iife',
   },
 }

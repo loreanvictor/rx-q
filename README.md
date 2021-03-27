@@ -1,12 +1,12 @@
-# Queue Operator for Observables
+# Queued Observables
 
 ```bash
-npm i rx-queue-operator
+npm i queued-observable
 ```
 
 [![tests](https://img.shields.io/github/workflow/status/loreanvictor/rx-q/Test%20and%20Report%20Coverage?label=tests&logo=mocha&logoColor=green&style=flat-square)](https://github.com/loreanvictor/rx-q/actions?query=workflow%3A%22Test+and+Report+Coverage%22)
 [![coverage](https://img.shields.io/codecov/c/github/loreanvictor/rx-q?logo=codecov&style=flat-square)](https://codecov.io/gh/loreanvictor/rx-q)
-[![version](https://img.shields.io/npm/v/rx-queue-operator?logo=npm&style=flat-square)](https://www.npmjs.com/package/rx-queue-operator)
+[![version](https://img.shields.io/npm/v/queued-observable?logo=npm&style=flat-square)](https://www.npmjs.com/package/queued-observable)
 
 <br><br>
 
@@ -34,7 +34,7 @@ source.next(4)
 A _queued observable_ will put its observers in a queue and only send data to the first one until it unsubscribes:
 
 ```js
-import { queue } from 'rx-queue-operator'
+import { queue } from 'queued-observable'
 
 const queued = queue(source)
 
@@ -60,7 +60,7 @@ If you want to partition incoming data based on some _key_ and then form queues 
 observable), then use `KeyedQueue` utility:
 
 ```ts
-import { KeyedQueue } from 'rx-queue-operator'
+import { KeyedQueue } from 'queued-observable'
 
 const queue = new KeyedQueue<string>(x => x[0])
 

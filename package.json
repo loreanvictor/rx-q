@@ -1,7 +1,7 @@
 {
-  "name": "rx-queue-operator",
+  "name": "queued-observable",
   "version": "0.1.0",
-  "description": "Serve observers one by one",
+  "description": "Serve observers one by one in queue",
   "main": "dist/es5/index.js",
   "module": "dist/es6/index.js",
   "types": "dist/es6/index.d.ts",
